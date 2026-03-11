@@ -6,6 +6,41 @@ body {
     color: #333;
     line-height: 1.6;
 }
+
+/* New layout for the header and photo */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 2em;
+}
+.blurb {
+    flex: 2;
+}
+.profile-pic {
+    flex: 1;
+    text-align: right;
+}
+.profile-pic img {
+    max-width: 100%;
+    width: 200px; /* Adjust this value to make the picture larger or smaller */
+    height: auto;
+    border-radius: 50%; /* This makes the image circular. Remove this line if you want a square image. */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive design: stacks the photo under the bio on small mobile screens */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-pic {
+        text-align: center;
+    }
+}
+
 a {
     text-decoration: none;
     color: #0366d6;
@@ -22,6 +57,7 @@ h1 {
     border-bottom: 1px solid #eaecef;
     padding-bottom: 0.2em;
     margin-bottom: 0.5em;
+    margin-top: 0;
 }
 h2 {
     font-size: 1.5em;
@@ -29,11 +65,19 @@ h2 {
     padding-bottom: 0.2em;
     margin-top: 1.5em;
 }
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+}
 .section ul {
     padding-left: 20px;
+    margin-top: 0.5em;
 }
 .section li {
     margin-bottom: 10px;
+}
+small {
+    color: #666;
 }
 footer {
     border-top: 1px solid #d5d5d5;
